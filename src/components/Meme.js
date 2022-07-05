@@ -6,12 +6,15 @@ export default function Meme() {
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg"
   })
-  const [allMemes, setAllMeme] = React.useState([]); //this empty array will fill with our memes as soon as our component loads the first time
+  const [allMemes, setAllMemes] = React.useState([]); //this empty array will fill with our memes as soon as our component loads the first time
 
   React.useEffect(() => {
-    fetch('https://api.imgflip.com/get_memes')
-      .then(res => res.json())
-      .then(data => setAllMeme(data.data.memes))
+    async function getMemes() {
+     const res = await fetch('https://api.imgflip.com/get_memes')
+     const data = await res.json()
+     setAllMemes(data.data.memes)
+}
+    getMemes()
   }, [])
   /* api request to happen as soon as the component loads and 
   saving all of those memes in our state, then we're accessing

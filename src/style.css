@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
+  color: white;
 }
 
 main {
@@ -15,7 +16,6 @@ main {
 /* header */
 .header {
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,6 +50,28 @@ main {
   font-weight: 700;
   border: none;
   cursor: pointer;
+}
+
+.meme-image {
+  max-width: 100%;
+}
+
+.meme {
+  position: relative;
+}
+
+.meme-text {
+  position: absolute;
+  text-transform: uppercase;
+  left: 10px;
+}
+
+.top {
+  top: 30px;
+}
+
+.bottom {
+  bottom: 150px;
 }
 
 /* responsive */
